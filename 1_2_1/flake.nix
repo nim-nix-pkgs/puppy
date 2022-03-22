@@ -8,8 +8,8 @@
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
   inputs.src-puppy-1_2_1.flake = false;
+  inputs.src-puppy-1_2_1.ref   = "refs/tags/1.2.1";
   inputs.src-puppy-1_2_1.owner = "treeform";
-  inputs.src-puppy-1_2_1.ref   = "1_2_1";
   inputs.src-puppy-1_2_1.repo  = "puppy";
   inputs.src-puppy-1_2_1.type  = "github";
   
