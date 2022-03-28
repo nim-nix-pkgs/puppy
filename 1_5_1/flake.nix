@@ -11,7 +11,6 @@
   inputs.src-puppy-1_5_1.ref   = "refs/tags/1.5.1";
   inputs.src-puppy-1_5_1.owner = "treeform";
   inputs.src-puppy-1_5_1.repo  = "puppy";
-  inputs.src-puppy-1_5_1.dir   = "";
   inputs.src-puppy-1_5_1.type  = "github";
   
   inputs."urlly".owner = "nim-nix-pkgs";
