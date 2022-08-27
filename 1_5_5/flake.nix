@@ -7,11 +7,11 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
-  inputs.src-puppy-1_0_3.flake = false;
-  inputs.src-puppy-1_0_3.ref   = "refs/tags/1.0.3";
-  inputs.src-puppy-1_0_3.owner = "treeform";
-  inputs.src-puppy-1_0_3.repo  = "puppy";
-  inputs.src-puppy-1_0_3.type  = "github";
+  inputs.src-puppy-1_5_5.flake = false;
+  inputs.src-puppy-1_5_5.ref   = "refs/tags/1.5.5";
+  inputs.src-puppy-1_5_5.owner = "treeform";
+  inputs.src-puppy-1_5_5.repo  = "puppy";
+  inputs.src-puppy-1_5_5.type  = "github";
   
   inputs."urlly".owner = "nim-nix-pkgs";
   inputs."urlly".ref   = "master";
@@ -20,14 +20,6 @@
   inputs."urlly".type  = "github";
   inputs."urlly".inputs.nixpkgs.follows = "nixpkgs";
   inputs."urlly".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
-  
-  inputs."winim".owner = "nim-nix-pkgs";
-  inputs."winim".ref   = "master";
-  inputs."winim".repo  = "winim";
-  inputs."winim".dir   = "3_9_0";
-  inputs."winim".type  = "github";
-  inputs."winim".inputs.nixpkgs.follows = "nixpkgs";
-  inputs."winim".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   inputs."libcurl".owner = "nim-nix-pkgs";
   inputs."libcurl".ref   = "master";
@@ -48,13 +40,13 @@
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 
     lib  = flakeNimbleLib.lib;
-    args = ["self" "nixpkgs" "flakeNimbleLib" "src-puppy-1_0_3"];
+    args = ["self" "nixpkgs" "flakeNimbleLib" "src-puppy-1_5_5"];
     over = if builtins.pathExists ./override.nix 
            then { override = import ./override.nix; }
            else { };
   in lib.mkRefOutput (over // {
     inherit self nixpkgs ;
-    src  = deps."src-puppy-1_0_3";
+    src  = deps."src-puppy-1_5_5";
     deps = builtins.removeAttrs deps args;
     meta = builtins.fromJSON (builtins.readFile ./meta.json);
   } );
